@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lista de Contactos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Lista de Contactos</h1>
+    <p class="subtitle">Crear, editar y eliminar contactos — guardado en localStorage</p>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <h2>Agregar / Editar Contacto</h2>
+      <form id="contactForm">
+        <input type="hidden" id="contactId" value="">
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input id="name" type="text" required placeholder="Ej: Juan Pérez">
+        </div>
+        <div class="field">
+          <label for="phone">Teléfono</label>
+          <input id="phone" type="tel" required placeholder="Ej: +57 300 1234567">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" required placeholder="Ej: correo@ejemplo.com">
+        </div>
+        <div class="actions">
+          <button type="submit" id="btnSave">Guardar</button>
+          <button type="button" id="btnClear">Limpiar</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <h2>Contactos</h2>
+      <table id="contactsTable" aria-describedby="contacts-desc">
+        <caption id="contacts-desc">Lista de contactos guardados en el navegador</caption>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Teléfono</th>
+            <th>Email</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Filas generadas por JavaScript -->
+        </tbody>
+      </table>
+      <p id="emptyMessage" class="muted">No hay contactos. Agrega uno usando el formulario.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Guardado localmente con <code>localStorage</code>. Vence: 15 de octubre de 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
